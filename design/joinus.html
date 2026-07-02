@@ -1,0 +1,402 @@
+<!doctype html>
+
+<html lang="id">
+  <head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <title>Join Us - UKM Penalaran</title>
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Lexend:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet" />
+    <script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              "on-primary-fixed-variant": "#3c4d00",
+              "on-primary": "#ffffff",
+              background: "#fdfdfa",
+              "on-tertiary-container": "#001c39",
+              "on-secondary-fixed": "#1e0060",
+              error: "#ba1a1a",
+              "on-error": "#ffffff",
+              "tertiary-container": "#d3e3ff",
+              "surface-container": "#f2f2ef",
+              tertiary: "#004883",
+              "on-error-container": "#410002",
+              "on-surface": "#1b1c18",
+              "secondary-fixed-dim": "#ccbeff",
+              "primary-container": "#c3f400",
+              "surface-bright": "#fdfdfa",
+              "surface-variant": "#e1e4d3",
+              outline: "#757869",
+              "outline-variant": "#c4c9ac",
+              "inverse-surface": "#30312c",
+              "tertiary-fixed": "#d3e3ff",
+              "secondary-container": "#e7deff",
+              primary: "#506600",
+              "on-tertiary-fixed-variant": "#004883",
+              secondary: "#633cff",
+              "surface-container-high": "#eceed9",
+              "tertiary-fixed-dim": "#a3c9ff",
+              "on-background": "#1b1c18",
+              "on-secondary-fixed-variant": "#4c05d1",
+              "secondary-fixed": "#e7deff",
+              "surface-tint": "#506600",
+              "surface-container-lowest": "#ffffff",
+              "primary-fixed": "#c3f400",
+              "inverse-on-surface": "#f2f1ea",
+              "surface-container-low": "#f8f7f2",
+              "on-primary-fixed": "#161e00",
+              "on-primary-container": "#161e00",
+              "on-tertiary-fixed": "#001c39",
+              "primary-fixed-dim": "#abd600",
+              "on-secondary": "#ffffff",
+              "inverse-primary": "#abd600",
+              "on-tertiary": "#ffffff",
+              "on-surface-variant": "#444933",
+              "surface-container-highest": "#e6e5e0",
+              surface: "#fdfdfa",
+              "on-secondary-container": "#1e0060",
+              "error-container": "#ffdad6",
+              "surface-dim": "#dddcd7",
+            },
+            borderRadius: {
+              DEFAULT: "0.25rem",
+              lg: "0.5rem",
+              xl: "0.75rem",
+              full: "9999px",
+            },
+            spacing: {
+              xl: "80px",
+              base: "8px",
+              xs: "4px",
+              "margin-desktop": "64px",
+              sm: "12px",
+              md: "24px",
+              lg: "48px",
+              gutter: "24px",
+              "margin-mobile": "16px",
+            },
+            fontFamily: {
+              "headline-xl": ["Lexend"],
+              "body-md": ["Lexend"],
+              "headline-md": ["Lexend"],
+              "label-md": ["Lexend"],
+              "headline-lg": ["Lexend"],
+              "body-lg": ["Lexend"],
+              "headline-lg-mobile": ["Lexend"],
+              "label-sm": ["Lexend"],
+            },
+            fontSize: {
+              "headline-xl": [
+                "48px",
+                {
+                  lineHeight: "1.1",
+                  letterSpacing: "-0.02em",
+                  fontWeight: "700",
+                },
+              ],
+              "body-md": [
+                "16px",
+                {
+                  lineHeight: "1.5",
+                  fontWeight: "400",
+                },
+              ],
+              "headline-md": [
+                "24px",
+                {
+                  lineHeight: "1.3",
+                  fontWeight: "600",
+                },
+              ],
+              "label-md": [
+                "14px",
+                {
+                  lineHeight: "1.2",
+                  fontWeight: "600",
+                },
+              ],
+              "headline-lg": [
+                "32px",
+                {
+                  lineHeight: "1.2",
+                  letterSpacing: "-0.01em",
+                  fontWeight: "600",
+                },
+              ],
+              "body-lg": [
+                "18px",
+                {
+                  lineHeight: "1.6",
+                  fontWeight: "400",
+                },
+              ],
+              "headline-lg-mobile": [
+                "28px",
+                {
+                  lineHeight: "1.2",
+                  fontWeight: "600",
+                },
+              ],
+              "label-sm": [
+                "12px",
+                {
+                  lineHeight: "1.2",
+                  fontWeight: "500",
+                },
+              ],
+            },
+          },
+        },
+      };
+    </script>
+    <style>
+      .material-symbols-outlined {
+        font-variation-settings:
+          "FILL" 0,
+          "wght" 400,
+          "GRAD" 0,
+          "opsz" 24;
+      }
+      .bento-card {
+        transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+      }
+      .bento-card:hover {
+        transform: translateY(-4px);
+        box-shadow: 0 10px 30px -10px rgba(0, 0, 0, 0.1);
+      }
+      .accordion-content {
+        max-height: 0;
+        overflow: hidden;
+        transition: max-height 0.3s ease-out;
+      }
+      .accordion-item.active .accordion-content {
+        max-height: 200px;
+      }
+      .accordion-item.active .chevron-icon {
+        transform: rotate(180deg);
+      }
+    </style>
+  </head>
+  <body class="bg-background text-on-surface font-body-md overflow-x-hidden">
+    <!-- Header (Shared Component) -->
+    <nav class="fixed top-0 w-full z-50 bg-surface/80 backdrop-blur-md border-b border-outline-variant shadow-sm">
+      <div class="flex justify-between items-center px-margin-mobile md:px-margin-desktop h-20 max-w-max-width mx-auto">
+        <div class="font-headline-xl text-2xl font-black text-on-surface tracking-tight">UKM Penalaran</div>
+        <!-- Desktop Nav -->
+        <div class="hidden md:flex gap-8 items-center">
+          <a class="text-on-surface-variant hover:text-primary transition-colors font-label-md text-label-md" href="#">Home</a>
+          <a class="text-on-surface-variant hover:text-primary transition-colors font-label-md text-label-md" href="#">About</a>
+          <a class="text-on-surface-variant hover:text-primary transition-colors font-label-md text-label-md" href="#">BSO</a>
+          <a class="text-on-surface-variant hover:text-primary transition-colors font-label-md text-label-md" href="#">Achievements</a>
+          <a class="text-primary font-bold border-b-2 border-primary-container pb-1 font-label-md text-label-md" href="#">Join Us</a>
+          <a class="text-on-surface-variant hover:text-primary transition-colors font-label-md text-label-md" href="#">Contact</a>
+        </div>
+        <div class="flex gap-4 items-center">
+          <button class="hidden md:block px-6 py-2 rounded-full border border-secondary text-secondary font-label-md text-label-md hover:bg-secondary/5 transition-all">Login</button>
+          <button class="px-6 py-2 rounded-full bg-primary-container text-on-primary-container font-label-md text-label-md hover:shadow-lg hover:shadow-primary-container/20 active:scale-95 transition-all">Join Us</button>
+          <button class="md:hidden text-primary">
+            <span class="material-symbols-outlined">menu</span>
+          </button>
+        </div>
+      </div>
+    </nav>
+    <main class="pt-20">
+      <!-- Hero Section -->
+      <section class="relative py-24 overflow-hidden">
+        <div class="max-w-[1280px] mx-auto px-margin-mobile md:px-margin-desktop relative z-10 text-center">
+          <span class="inline-block px-4 py-1.5 mb-6 rounded-full bg-secondary text-on-secondary font-label-md text-label-md tracking-wide uppercase">Rekrutmen Anggota 2024</span>
+          <h1 class="font-headline-xl text-headline-xl md:text-[80px] md:leading-[90px] text-on-surface mb-6">Bergabunglah dengan Kami</h1>
+          <p class="font-body-lg text-body-lg text-on-surface-variant max-w-2xl mx-auto">Kembangkan potensi intelektualmu, bangun jaringan profesional, dan jadilah bagian dari perjalanan riset transformatif di UKM Penalaran.</p>
+        </div>
+      </section>
+      <!-- Why Join Section (Bento Grid) -->
+      <section class="py-20 bg-surface-container-lowest border-y border-outline-variant/50">
+        <div class="max-w-[1280px] mx-auto px-margin-mobile md:px-margin-desktop">
+          <div class="flex flex-col md:flex-row justify-between items-end mb-12 gap-6">
+            <div class="max-w-xl">
+              <h2 class="font-headline-lg text-headline-lg text-on-surface mb-4">Mengapa Memilih Kami?</h2>
+              <p class="text-on-surface-variant">Kami menyediakan ekosistem yang mendukung pertumbuhan akademik dan karakter mahasiswa melalui riset dan penalaran.</p>
+            </div>
+          </div>
+          <div class="grid grid-cols-1 md:grid-cols-12 gap-gutter">
+            <!-- Card 1: Networking -->
+            <div class="md:col-span-8 bg-surface-container p-8 rounded-3xl bento-card border border-outline-variant flex flex-col md:flex-row items-center gap-8">
+              <div class="md:w-1/2">
+                <span class="text-primary font-headline-xl text-6xl mb-4 block">01</span>
+                <h3 class="font-headline-lg text-2xl text-on-surface mb-3">Professional Networking</h3>
+                <p class="text-on-surface-variant">Terhubung dengan ribuan alumni, akademisi, dan praktisi industri yang memiliki visi yang sama dalam pengembangan ilmu pengetahuan.</p>
+              </div>
+              <div class="md:w-1/2 w-full h-64 rounded-2xl overflow-hidden relative">
+                <img
+                  class="w-full h-full object-cover"
+                  data-alt="A group of diverse university students collaborating in a bright, modern glass-walled conference room. They are engaged in a professional discussion, using laptops and whiteboards. The lighting is warm and natural, creating an atmosphere of intellectual synergy and leadership. Professional corporate aesthetic with clean lines and soft depth of field."
+                  src="https://lh3.googleusercontent.com/aida-public/AB6AXuBzEiTlhej8ClB-w4i0beurwjavSUn17Ja_sgfZKHXNn8AymVtGmty-PxvrNX70yZBOdmn5ibj5DBLURGoXFQTAcTCjhTPG0AASh6OFOWL9B-QE-3kyL1rX1uYgK1ur5nCZddaXcyjMvbSfZnZcMA6Zu-2LXpcWkPuqP2Slgf8PLBCrkz02SIeqm-9o837RUjcC6xzUOCH78_SE0QH38XDCx7VGa-Yhx8b3QGDOFZcBrRl7gar4GduM"
+                />
+              </div>
+            </div>
+            <!-- Card 2: Skills -->
+            <div class="md:col-span-4 bg-primary-container text-on-primary-container p-8 rounded-3xl bento-card flex flex-col justify-between">
+              <div>
+                <span class="text-on-primary-container font-headline-xl text-6xl mb-4 block opacity-50">02</span>
+                <h3 class="font-headline-lg text-2xl mb-3">Critical Skills</h3>
+                <p class="opacity-90">Kuasai teknik riset, penulisan ilmiah, hingga public speaking yang akan menjadi fondasi karir masa depanmu.</p>
+              </div>
+              <div class="mt-8 flex flex-wrap gap-2">
+                <span class="px-3 py-1 bg-surface text-primary border border-primary/30 rounded-full text-xs font-label-md uppercase">Research</span>
+                <span class="px-3 py-1 bg-surface text-primary border border-primary/30 rounded-full text-xs font-label-md uppercase">Critical Thinking</span>
+              </div>
+            </div>
+            <!-- Card 3: Experience -->
+            <div class="md:col-span-4 bg-secondary text-on-secondary p-8 rounded-3xl bento-card">
+              <span class="text-secondary-container font-headline-xl text-6xl mb-4 block">03</span>
+              <h3 class="font-headline-lg text-2xl mb-3">Real Experience</h3>
+              <p class="opacity-90">Terjun langsung dalam proyek riset nasional dan kompetisi bergengsi seperti PIMNAS dan kompetisi internasional lainnya.</p>
+            </div>
+            <!-- Card 4: Portfolio -->
+            <div class="md:col-span-8 bg-surface-container-high p-8 rounded-3xl bento-card border border-outline-variant flex flex-col justify-center">
+              <div class="flex items-start gap-6">
+                <div class="hidden sm:block">
+                  <span class="material-symbols-outlined text-primary text-5xl" style="font-variation-settings: &quot;FILL&quot; 1">workspace_premium</span>
+                </div>
+                <div>
+                  <h3 class="font-headline-lg text-2xl text-on-surface mb-3">Impactful Portfolio</h3>
+                  <p class="text-on-surface-variant">Bangun rekam jejak prestasi yang kredibel. Portofolio riset yang kuat akan membuka pintu beasiswa dan peluang kerja di perusahaan multinasional.</p>
+                  <div class="mt-6 flex items-center gap-4">
+                    <div class="flex -space-x-4">
+                      <div class="w-10 h-10 rounded-full border-2 border-surface bg-gray-200 overflow-hidden">
+                        <img
+                          class="w-full h-full object-cover"
+                          data-alt="Portrait of a young male student in professional attire, smiling with confidence. The background is a blurred academic library, suggesting intelligence and scholarly focus. Soft daylight lighting, minimalist corporate style."
+                          src="https://lh3.googleusercontent.com/aida-public/AB6AXuBXPrVCK8lOkHQXjm6752d1F69yMQl-S1j-ogzztBr5bsnuv9azd-5BTQSGpO3bmqEKAYK9P3xvHpkWeWgXfR9z4Qzc_W7Kfxuo9qIlbpsi2UxLKRrj4od_ROKokkHxZdnsB-jP-vA1_6vwnc4VP7GVMpIKK1V_0nhNvj_IhK9HULaiSP_We5wNz6RZC0y8gIW62-VBk6rj31RinHPaf-XmuhhY0qxtbfF8Qg0LEla6_5YDM61H2FH4"
+                        />
+                      </div>
+                      <div class="w-10 h-10 rounded-full border-2 border-surface bg-gray-200 overflow-hidden">
+                        <img
+                          class="w-full h-full object-cover"
+                          data-alt="Portrait of a young female researcher looking through a window, thinking deeply. Modern aesthetic with soft lighting and professional office backdrop. Clean composition, focused and determined mood."
+                          src="https://lh3.googleusercontent.com/aida-public/AB6AXuDdHls5rJi8Z5lfPeJWX_NK6lNCOX1lqlAuOpGGqcG5TOV60HYWYr_M72xoTSm5wmVpkxzt0HLhVo-lAfN7K7_hnBPpQDB2Mjmaeys87QeoJLh-dxXMTWAqyCFpJyDOQTesPWrUvogcLaZkrxSD9cGVKQGXKictsDsw3Xr_xT3RLxeadJn65TKRIm0STC7CJO982D1xWZBUH9Ik152znAvJq0-sdlcKLsEf4ptBO-TIfCA4rruQTOyt"
+                        />
+                      </div>
+                      <div class="w-10 h-10 rounded-full border-2 border-surface bg-primary-container flex items-center justify-center text-[10px] font-bold text-on-primary-container">+1k</div>
+                    </div>
+                    <span class="text-sm font-label-md text-on-surface-variant">Anggota telah tersertifikasi</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <!-- Registration Form Section -->
+      <section class="py-32">
+        <div class="max-w-4xl mx-auto px-margin-mobile md:px-margin-desktop text-center">
+          <div class="bg-surface-container p-10 md:p-16 rounded-[2rem] border border-outline-variant relative overflow-hidden">
+            <div class="absolute -top-24 -right-24 w-64 h-64 bg-primary-container/30 rounded-full blur-3xl"></div>
+            <div class="absolute -bottom-24 -left-24 w-64 h-64 bg-secondary-container/50 rounded-full blur-3xl"></div>
+            <div class="relative z-10">
+              <h2 class="font-headline-xl text-headline-xl text-on-surface mb-6">Siap Bergabung?</h2>
+              <p class="font-body-lg text-body-lg text-on-surface-variant mb-12 max-w-2xl mx-auto">
+                Proses pendaftaran kini lebih mudah. Klik tombol di bawah ini untuk mengisi formulir pendaftaran resmi melalui Google Form. Pastikan Anda telah menyiapkan berkas dan data diri yang diperlukan.
+              </p>
+              <a
+                class="inline-flex items-center justify-center gap-3 px-10 py-5 bg-primary-container text-on-primary-container rounded-full font-headline-md text-xl hover:bg-primary-fixed transition-transform hover:scale-105 shadow-lg shadow-primary-container/20"
+                href="#"
+              >
+                Daftar Sekarang via Google Form
+                <span class="material-symbols-outlined">open_in_new</span>
+              </a>
+            </div>
+          </div>
+        </div>
+      </section>
+      <!-- FAQ Section -->
+      <section class="py-24 bg-surface-container-lowest border-t border-outline-variant/50">
+        <div class="max-w-3xl mx-auto px-margin-mobile md:px-margin-desktop">
+          <h2 class="font-headline-lg text-headline-lg text-on-surface mb-12 text-center">Frequently Asked Questions</h2>
+          <div class="space-y-4">
+            <!-- FAQ 1 -->
+            <div class="accordion-item border border-outline-variant rounded-2xl bg-surface-container overflow-hidden transition-all hover:border-primary cursor-pointer" onclick="this.classList.toggle('active')">
+              <div class="flex justify-between items-center p-6">
+                <h3 class="font-label-md text-lg text-on-surface">Siapa saja yang boleh mendaftar?</h3>
+                <span class="material-symbols-outlined chevron-icon transition-transform duration-300 text-on-surface-variant">expand_more</span>
+              </div>
+              <div class="accordion-content">
+                <div class="px-6 pb-6 text-on-surface-variant font-body-md">
+                  Seluruh mahasiswa aktif Universitas jenjang S1 atau Diploma dari semua angkatan dan jurusan diperbolehkan mendaftar selama memiliki minat dalam bidang penalaran dan riset.
+                </div>
+              </div>
+            </div>
+            <!-- FAQ 2 -->
+            <div class="accordion-item border border-outline-variant rounded-2xl bg-surface-container overflow-hidden transition-all hover:border-primary cursor-pointer" onclick="this.classList.toggle('active')">
+              <div class="flex justify-between items-center p-6">
+                <h3 class="font-label-md text-lg text-on-surface">Apakah harus sudah memiliki pengalaman riset?</h3>
+                <span class="material-symbols-outlined chevron-icon transition-transform duration-300 text-on-surface-variant">expand_more</span>
+              </div>
+              <div class="accordion-content">
+                <div class="px-6 pb-6 text-on-surface-variant font-body-md">Tidak perlu. UKM Penalaran adalah wadah belajar. Kami akan memberikan pelatihan dari dasar mengenai metodologi penelitian, penulisan, dan berpikir kritis.</div>
+              </div>
+            </div>
+            <!-- FAQ 3 -->
+            <div class="accordion-item border border-outline-variant rounded-2xl bg-surface-container overflow-hidden transition-all hover:border-primary cursor-pointer" onclick="this.classList.toggle('active')">
+              <div class="flex justify-between items-center p-6">
+                <h3 class="font-label-md text-lg text-on-surface">Bagaimana tahapan seleksinya?</h3>
+                <span class="material-symbols-outlined chevron-icon transition-transform duration-300 text-on-surface-variant">expand_more</span>
+              </div>
+              <div class="accordion-content">
+                <div class="px-6 pb-6 text-on-surface-variant font-body-md">Tahapan seleksi terdiri dari: 1. Administrasi (Form Online), 2. Essay/Proposal Singkat, 3. Wawancara, dan 4. Diklat Dasar Organisasi.</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+    <!-- Footer (Shared Component) -->
+    <footer class="bg-surface-container-lowest border-t border-outline-variant/50 w-full pt-16 pb-8">
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-gutter px-margin-mobile md:px-margin-desktop max-w-[1280px] mx-auto text-center md:text-left">
+        <div class="space-y-4">
+          <div class="font-headline-lg text-xl text-on-surface">UKM Penalaran</div>
+          <p class="text-on-surface-variant text-body-md font-body-md">Lembaga riset dan penalaran mahasiswa yang berfokus pada inovasi, integritas intelektual, dan pengembangan karakter unggul.</p>
+          <div class="flex justify-center md:justify-start gap-4">
+            <a class="text-on-surface-variant hover:text-primary hover:-translate-y-1 transition-all" href="#"><span class="material-symbols-outlined">public</span></a>
+            <a class="text-on-surface-variant hover:text-primary hover:-translate-y-1 transition-all" href="#"><span class="material-symbols-outlined">mail</span></a>
+            <a class="text-on-surface-variant hover:text-primary hover:-translate-y-1 transition-all" href="#"><span class="material-symbols-outlined">link</span></a>
+          </div>
+        </div>
+        <div class="space-y-4">
+          <h4 class="font-label-md text-label-md text-on-surface">Quick Links</h4>
+          <ul class="space-y-2">
+            <li><a class="text-on-surface-variant hover:text-primary transition-colors font-label-md text-label-md" href="#">Penalaran</a></li>
+            <li><a class="text-on-surface-variant hover:text-primary transition-colors font-label-md text-label-md" href="#">Pandawa</a></li>
+            <li><a class="text-on-surface-variant hover:text-primary transition-colors font-label-md text-label-md" href="#">Nalarfest</a></li>
+          </ul>
+        </div>
+        <div class="space-y-4">
+          <h4 class="font-label-md text-label-md text-on-surface">Legal</h4>
+          <ul class="space-y-2">
+            <li><a class="text-on-surface-variant hover:text-primary transition-colors font-label-md text-label-md" href="#">Privacy Policy</a></li>
+            <li><a class="text-on-surface-variant hover:text-primary transition-colors font-label-md text-label-md" href="#">Terms of Service</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="mt-12 pt-8 border-t border-outline-variant/50 text-center max-w-[1280px] mx-auto px-margin-mobile">
+        <p class="text-on-surface-variant/70 font-body-md text-sm">© 2024 UKM Penalaran. Research &amp; Reasoning Excellence.</p>
+      </div>
+    </footer>
+    <script>
+      // Custom interactive effects
+      document.querySelectorAll("button").forEach((btn) => {
+        btn.addEventListener("click", function () {
+          this.classList.add("scale-95");
+          setTimeout(() => this.classList.remove("scale-95"), 100);
+        });
+      });
+
+      // Initialize accordion default open
+      document.querySelector(".accordion-item").classList.add("active");
+    </script>
+  </body>
+</html>
