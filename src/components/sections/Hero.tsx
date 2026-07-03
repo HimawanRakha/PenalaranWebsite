@@ -35,7 +35,7 @@ export function Hero() {
 
           <Reveal delay={200}>
             <p className="mx-auto max-w-xl text-base leading-relaxed text-muted sm:text-lg lg:mx-0">
-              UKM PENALARAN ITS Memberdayakan generasi peneliti dan pemikir kritis masa depan melalui tradisi akademik yang ketat, riset kolaboratif, dan inovasi yang berdampak nyata.
+              UKM PENALARAN ITS memberdayakan generasi peneliti dan pemikir kritis masa depan melalui tradisi akademik yang ketat, riset kolaboratif, dan inovasi yang berdampak nyata.
             </p>
           </Reveal>
 
