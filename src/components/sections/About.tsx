@@ -44,7 +44,7 @@ export function About() {
   return (
     <section id="tentang" className="relative scroll-mt-20 overflow-hidden px-5 py-24 md:px-10">
       <div className="absolute inset-0 z-0">
-        <Image src="/bg-jakcket2.JPG" alt="" fill sizes="100vw" className="object-cover object-[center_35%]" />
+        <Image src="/bg-jakcket2.JPG" alt="Anggota UKM Penalaran ITS mengenakan jaket almamater kebanggaan" fill sizes="100vw" className="object-cover object-[center_35%]" />
         <div className="absolute inset-0 bg-gradient-to-b from-ink/60 via-ink/80 to-ink" />
       </div>
       <div className="pointer-events-none absolute -top-20 left-0 z-0 h-72 w-72 rounded-full bg-primary/20 blur-3xl" />

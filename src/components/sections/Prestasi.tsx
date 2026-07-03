@@ -34,7 +34,7 @@ export function Prestasi() {
   return (
     <section id="prestasi" className="relative scroll-mt-20 overflow-hidden px-5 py-24 text-white md:px-10">
       <div className="absolute inset-0 z-0">
-        <Image src="/bg-jacket.JPG" alt="" fill sizes="100vw" className="object-cover object-[center_30%]" />
+        <Image src="/bg-jacket.JPG" alt="Anggota UKM Penalaran ITS berkumpul bersama mengenakan jaket organisasi" fill sizes="100vw" className="object-cover object-[center_30%]" />
         <div className="absolute inset-0 " />
         <div className="absolute inset-0 bg-gradient-to-b from-ink/60 via-ink/80 to-ink" />
       </div>

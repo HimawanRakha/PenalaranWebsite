@@ -7,23 +7,22 @@ import { LogoMark } from "@/components/ui/LogoMark";
 import { Reveal } from "@/components/ui/Reveal";
 import { SectionHeading } from "@/components/ui/SectionHeading";
 
-function BsoHeroFrame({ bso }: { bso: Bso }) {
+function BsoPoster({ bso }: { bso: Bso }) {
   return (
-    <div className="mx-auto w-full max-w-sm lg:mx-0 lg:h-full lg:max-w-none">
-      <div className="flex h-full flex-col overflow-hidden rounded-2xl border border-white/80 bg-white/90 p-2.5 shadow-md backdrop-blur-sm">
-        <div className="relative min-h-[280px] flex-1 overflow-hidden rounded-xl bg-white/70 sm:min-h-[320px] lg:min-h-[360px]">
+    <div className="relative mx-auto w-full max-w-sm">
+      <div className="absolute inset-0 rotate-6 rounded-[2rem] bg-white/25" />
+      <div className="relative -rotate-3 overflow-hidden rounded-[2rem] border border-white/80 bg-white/90 p-2.5 shadow-2xl backdrop-blur-sm transition-transform duration-300 hover:rotate-0">
+        <div className="relative aspect-[4/5] w-full overflow-hidden rounded-2xl bg-white/70">
           {bso.heroImage ? (
             <Image
               src={bso.heroImage}
-              alt={bso.heroImageAlt ?? `Gambar ${bso.name}`}
+              alt={bso.heroImageAlt ?? `Poster ${bso.name}`}
               fill
-              sizes="(min-width: 1024px) 320px, (min-width: 640px) 384px, 100vw"
+              sizes="(min-width: 1024px) 380px, 90vw"
               className="object-contain object-center"
             />
           ) : (
-            <div className={`flex h-full min-h-[280px] items-center justify-center rounded-xl border-2 border-dashed sm:min-h-[320px] lg:min-h-[360px] ${bso.theme.tag}`}>
-              <span className="px-6 text-center text-xs font-semibold uppercase tracking-wider opacity-70">Bingkai gambar</span>
-            </div>
+            <div className="flex h-full items-center justify-center text-center text-xs font-semibold uppercase tracking-wider opacity-60">Bingkai gambar</div>
           )}
         </div>
       </div>
@@ -60,7 +59,7 @@ export function BsoTabs() {
                     : "border border-line bg-slate-50 text-muted hover:border-line hover:text-ink"
                 }`}
               >
-                <LogoMark src={bso.logo} alt="" className="h-5 w-5 rounded-md" padding="p-0.5" ring={false} />
+                <LogoMark src={bso.logo} alt={`Logo ${bso.name}`} className="h-5 w-5 rounded-md" padding="p-0.5" ring={false} />
                 {bso.name}
               </button>
             ))}
@@ -70,21 +69,25 @@ export function BsoTabs() {
         <div className="relative mt-10">
           <div
             key={active.id}
-            className={`relative overflow-hidden rounded-[2.5rem] bg-gradient-to-br p-8 shadow-xl [animation:fadeIn_0.4s_ease-out] sm:p-10 md:p-12 lg:p-14 ${theme.card}`}
+            className={`relative overflow-hidden rounded-[2.5rem] bg-gradient-to-br p-8 [animation:fadeIn_0.4s_ease-out] sm:p-10 md:p-12 lg:p-16 ${theme.card}`}
           >
             <div className={`pointer-events-none absolute -right-16 -top-16 h-64 w-64 rounded-full blur-3xl ${theme.glowPrimary}`} />
             <div className={`pointer-events-none absolute -bottom-20 -left-16 h-56 w-56 rounded-full blur-3xl ${theme.glowSecondary}`} />
-            <div className={`absolute inset-y-8 left-0 w-1 rounded-full ${theme.stripe}`} />
 
-            <div className="relative z-10 grid gap-8 lg:grid-cols-[minmax(0,1fr)_minmax(240px,30%)] lg:items-stretch lg:gap-10">
-              <div className="grid gap-8 md:grid-cols-[auto_1fr] md:items-start">
-                <div className="flex h-16 w-16 shrink-0 items-center justify-center rounded-2xl border border-white/80 bg-white/90 shadow-sm backdrop-blur-sm">
-                  <LogoMark src={active.logo} alt={`Logo ${active.name}`} className="h-full w-full rounded-xl" padding="p-2" ring={false} />
+            <div className="relative z-10 grid gap-10 lg:grid-cols-2 lg:items-center">
+              <BsoPoster bso={active} />
+
+              <div className="relative">
+                <div className="pointer-events-none absolute -right-6 -top-12 z-0 h-56 w-56 opacity-[0.15] sm:h-72 sm:w-72 lg:-right-10">
+                  <Image src={active.logo} alt={`Watermark Logo ${active.name}`} fill sizes="288px" className="object-contain" />
                 </div>
-                <div>
+
+                <div className="relative z-10">
                   <p className={`font-display text-sm font-bold uppercase tracking-wider ${theme.label}`}>{active.tagline}</p>
-                  <h3 className={`mt-2 font-display text-3xl font-bold ${theme.title}`}>{active.name}</h3>
-                  <p className={`mt-4 max-w-2xl text-base leading-relaxed ${theme.description}`}>{active.description}</p>
+                  <h3 className={`mt-2 font-display text-5xl font-black leading-[0.95] sm:text-6xl md:text-7xl ${theme.title}`}>
+                    {active.name}
+                  </h3>
+                  <p className={`mt-5 max-w-xl text-base leading-relaxed ${theme.description}`}>{active.description}</p>
                   <div className="mt-6 flex flex-wrap gap-2">
                     {active.focus.map((item) => (
                       <span key={item} className={`rounded-full px-3 py-1 text-xs font-semibold ${theme.tag}`}>
@@ -102,8 +105,6 @@ export function BsoTabs() {
                   </a>
                 </div>
               </div>
-
-              <BsoHeroFrame bso={active} />
             </div>
           </div>
         </div>

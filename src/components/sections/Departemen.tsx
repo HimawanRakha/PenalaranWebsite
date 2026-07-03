@@ -17,7 +17,7 @@ export function Departemen() {
               <div className={`group relative aspect-[4/5] overflow-hidden rounded-3xl bg-gradient-to-br shadow-sm transition-shadow duration-300 hover:shadow-xl ${dept.gradient}`}>
                 <div className="absolute inset-x-0 bottom-0 top-[34%] flex items-center justify-center p-6">
                   <div className="relative h-full w-full transition-transform duration-500 ease-out group-hover:scale-105">
-                    <Image src={dept.logo} alt="" fill sizes="(min-width: 1024px) 33vw, (min-width: 640px) 50vw, 100vw" className="object-contain drop-shadow-xl" />
+                    <Image src={dept.logo} alt={`Maskot/Logo Departemen ${dept.name}`} fill sizes="(min-width: 1024px) 33vw, (min-width: 640px) 50vw, 100vw" className="object-contain drop-shadow-xl" />
                   </div>
                 </div>
 
