@@ -69,7 +69,7 @@ export function About() {
         <Reveal delay={150}>
           <div className="mt-8 flex flex-wrap justify-center gap-3">
             {benefits.map((benefit, index) => (
-              <span key={benefit.label} className="inline-flex items-center gap-2 rounded-full border border-line bg-white px-4 py-2 text-sm font-semibold text-ink">
+              <span key={benefit.label} className="inline-flex items-center gap-2 rounded-full border border-white/20 bg-white/10 px-4 py-2 text-sm font-semibold text-white shadow-sm backdrop-blur-md transition-colors hover:bg-white/20">
                 <benefit.icon size={16} className={accentColors[index % accentColors.length]} strokeWidth={2.5} />
                 {benefit.label}
               </span>
@@ -83,13 +83,15 @@ export function About() {
             return (
               <Reveal key={program.title} delay={index * 120} className="h-full">
                 <div
-                  className={`flex h-full flex-col items-center rounded-[2rem] p-10 transition-all duration-300 ${isSolid ? "bg-secondary text-white shadow-xl hover:scale-[1.02]" : "border border-line bg-white shadow-sm hover:shadow-xl"}`}
+                  className={`flex h-full flex-col items-center rounded-[2rem] border p-10 transition-all duration-300 backdrop-blur-lg ${
+                    isSolid ? "border-white/30 bg-white/15 text-white shadow-2xl hover:scale-[1.02] hover:bg-white/20" : "border-white/10 bg-white/5 text-white shadow-lg hover:shadow-xl hover:bg-white/10"
+                  }`}
                 >
-                  <div className={`mb-8 flex h-16 w-16 items-center justify-center rounded-2xl ${isSolid ? "bg-white/20" : "bg-primary"}`}>
-                    <program.icon size={28} className={isSolid ? "text-white" : "text-ink"} strokeWidth={2} />
+                  <div className={`mb-8 flex h-16 w-16 items-center justify-center rounded-2xl ${isSolid ? "bg-white/25 shadow-inner" : "bg-white/10"}`}>
+                    <program.icon size={28} className="text-white" strokeWidth={2} />
                   </div>
-                  <h3 className={`text-center font-display text-xl font-bold ${isSolid ? "text-white" : "text-ink"}`}>{program.title}</h3>
-                  <p className={`mt-4 text-center text-sm leading-relaxed ${isSolid ? "text-white/90" : "text-muted"}`}>{program.description}</p>
+                  <h3 className="text-center font-display text-xl font-bold text-white">{program.title}</h3>
+                  <p className="mt-4 text-center text-sm leading-relaxed text-white/80">{program.description}</p>
                 </div>
               </Reveal>
             );

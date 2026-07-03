@@ -6,8 +6,8 @@ import { Reveal } from "@/components/ui/Reveal";
 import { SectionHeading } from "@/components/ui/SectionHeading";
 
 const contactInfo = [
-  { icon: MapPin, label: "Alamat", value: "Gedung SCC, Kampus ITS Sukolilo, Surabaya" },
-  { icon: Mail, label: "Email", value: "ukmpenalaranits@gmail.com" },
+  { icon: MapPin, label: "Alamat", value: "Gedung SCC lt. 3 Ruang 309, Kampus ITS Sukolilo, Surabaya, Indonesia 60111" },
+  { icon: Mail, label: "Kerja Sama", value: "+62 858-6716-2251 (Nayla - Eternal)" },
   { icon: AtSign, label: "Instagram", value: "@penalaranits" },
 ];
 
