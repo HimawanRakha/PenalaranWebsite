@@ -66,7 +66,7 @@ export function Testimoni() {
                 </div>
                 <div className="flex flex-1 flex-col justify-between p-6 sm:p-7">
                   <div>
-                    <Quote className="h-8 w-8 text-secondary" fill="currentColor" strokeWidth={0} />
+                    <Quote className="h-8 w-8 text-white" fill="currentColor" strokeWidth={0} />
                     <p className="mt-4 text-base font-medium leading-relaxed text-white/90">{item.message}</p>
                   </div>
                   <div className="mt-6 border-t border-white/10 pt-4">
