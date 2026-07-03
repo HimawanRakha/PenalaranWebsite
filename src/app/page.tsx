@@ -7,6 +7,7 @@ import { Galeri } from "@/components/sections/Galeri";
 import { Hero } from "@/components/sections/Hero";
 import { Kontak } from "@/components/sections/Kontak";
 import { Prestasi } from "@/components/sections/Prestasi";
+import { Testimoni } from "@/components/sections/Testimoni";
 
 export default function Home() {
   return (
@@ -19,6 +20,7 @@ export default function Home() {
         <Departemen />
         <Prestasi />
         <Galeri />
+        <Testimoni />
         <Kontak />
       </main>
       <Footer />
