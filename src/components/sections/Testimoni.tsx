@@ -60,7 +60,7 @@ export function Testimoni() {
         <Reveal delay={150}>
           <div ref={trackRef} className="mt-12 flex snap-x snap-mandatory gap-6 overflow-x-auto pb-4 [scrollbar-width:none] [&::-webkit-scrollbar]:hidden">
             {testimoniList.map((item) => (
-              <div key={item.name} className="flex w-[85%] shrink-0 snap-start flex-col overflow-hidden rounded-[2rem] border border-white/10 bg-gradient-to-br from-white/10 to-white/[0.03] sm:w-[60%] sm:flex-row lg:w-[38%]">
+              <div key={item.name} className="flex w-[85%] shrink-0 snap-start flex-col overflow-hidden rounded-[2rem] border border-white/10 bg-white/15 sm:w-[60%] sm:flex-row lg:w-[38%]">
                 <div className="relative h-52 w-full shrink-0 sm:h-auto sm:w-2/5">
                   <Image src={item.photo} alt={item.name} fill sizes="(min-width: 1024px) 220px, 60vw" className="object-cover" />
                 </div>
