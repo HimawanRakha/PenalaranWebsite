@@ -1,9 +1,10 @@
 "use client";
 
 import { useState } from "react";
-import { AtSign, Mail, MapPin, Send } from "lucide-react";
+import { AtSign, ExternalLink, FileText, Mail, MapPin, Send } from "lucide-react";
 import { Reveal } from "@/components/ui/Reveal";
 import { SectionHeading } from "@/components/ui/SectionHeading";
+import { sopList } from "@/data/sop";
 
 const contactInfo = [
   { icon: MapPin, label: "Alamat", value: "Gedung SCC lt. 3 Ruang 309, Kampus ITS Sukolilo, Surabaya, Indonesia 60111" },
@@ -60,6 +61,34 @@ export function Kontak() {
                   Daftar via Google Form
                 </a>
               </div>
+            </div>
+          </Reveal>
+
+          <Reveal delay={150} className="w-full max-w-lg lg:max-w-5xl">
+            <div className="mt-6 grid gap-6 sm:grid-cols-2">
+              {sopList.map((sop) => (
+                <a
+                  key={sop.title}
+                  href={sop.href}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className={`group relative overflow-hidden rounded-[2rem] bg-gradient-to-br p-8 text-white shadow-lg transition-transform duration-300 hover:scale-[1.02] ${sop.gradient}`}
+                >
+                  <sop.icon className="pointer-events-none absolute -right-6 -top-6 h-32 w-32 text-white/15 transition-transform duration-500 group-hover:scale-110" strokeWidth={1.5} />
+                  <div className="relative z-10">
+                    {/* <span className="inline-flex items-center gap-1.5 rounded-full bg-white/15 px-3 py-1 text-[11px] font-bold uppercase tracking-wider">
+                      <FileText size={12} />
+                      Dokumen SOP
+                    </span> */}
+                    <h3 className="mt-4 font-display text-xl font-bold leading-snug">{sop.title}</h3>
+                    <p className="mt-2 text-sm leading-relaxed text-white/85">{sop.description}</p>
+                    <span className="mt-6 inline-flex items-center gap-2 font-display text-sm font-bold">
+                      Lihat Dokumen
+                      <ExternalLink size={16} className="transition-transform group-hover:translate-x-1" />
+                    </span>
+                  </div>
+                </a>
+              ))}
             </div>
           </Reveal>
 
