@@ -20,7 +20,7 @@ export default function Home() {
         <Departemen />
         <Prestasi />
         <Galeri />
-        <Testimoni />
+        {/* <Testimoni /> */}
         <Kontak />
       </main>
       <Footer />
